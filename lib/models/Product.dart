@@ -22,10 +22,10 @@ class Product {
       id: json['id'],
       categoryId: json['category_id'],
       name: json['name'],
-      price: (json['price'] as num?)?.toDouble(),
+      price: double.tryParse(json['price']?.toString() ?? '0'), // Chuyển đổi chuỗi sang double
       thumbnail: json['thumbnail'],
       description: json['description'],
-      weight: (json['weight'] as num?)?.toDouble(),
+      weight: double.tryParse(json['weight']?.toString() ?? '0'), // Chuyển đổi chuỗi sang double
     );
   }
 
